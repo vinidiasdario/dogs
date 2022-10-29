@@ -12,6 +12,11 @@
     animation: scaleUp .3s forwards;
 }
 
+.photoSingle.photo {
+    grid-template-columns: 1fr;
+    height: auto;
+}
+
 @keyframes scaleUp {
     to {
         opacity: initial;
@@ -24,10 +29,20 @@
     padding: 2rem 2rem 0rem;
 }
 
+.photoSingle .details {
+    padding: 2rem 0 0;
+}
+
 .img {
     grid-row: 1/4;
     display: flex;
     align-items: center;
+}
+
+.photoSingle .img {
+    grid-row: 1;
+    border-radius: 1rem;
+    overflow: hidden;
 }
 
 .comments {

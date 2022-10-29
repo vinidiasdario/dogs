@@ -17,7 +17,7 @@ const FeedPhotos = ({ user, page, setInfinite, setModalPhoto }) => {
       if (response && response.ok && json.length < total) setInfinite(false);
     }
     fetchPhotos();
-  }, [request, user, page]);
+  }, [request, user, page, setInfinite]);
 
   if (error) return <Error error={error} />;
   if (loading) return <Loading />;
