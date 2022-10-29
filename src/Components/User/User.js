@@ -7,14 +7,14 @@ import UserStats from "./UserStats";
 import { UserContext } from "../../UserContext";
 
 const User = () => {
-  const { login } = React.useContext(UserContext);
+  const { login, data } = React.useContext(UserContext);
   if (!login) return <Navigate to="/login" />;
 
   return (
     <section className="container">
       <UserHeader />
       <Routes>
-        <Route path="/" element={<Feed />} />
+        <Route path="/" element={<Feed user={data.id} />} />
         <Route path="postar" element={<UserPhotoPost />} />
         <Route path="estatisticas" element={<UserStats />} />
       </Routes>
